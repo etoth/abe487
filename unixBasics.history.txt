@@ -1,0 +1,190 @@
+ls
+ls /
+ls
+cd
+cd /
+cuffdiff.txt
+ls cuffdiff.txt
+ls rsgrps /
+ls bhurwitz /
+ls rsgrps | bhurwitz /
+ls rsgrps
+cd bhurwitz
+ls cd
+ls /
+ls rsgrps
+ls bhurwitz
+ls /
+ls rsgrps1
+ls rsgrps
+ls rspgrps:bhurwitz
+cd-
+pwd
+pwd /
+ls /
+ls rsgrps
+pwd
+pwd/
+pwd /
+cd rsgrps/bhurwitz
+ls
+cd rspgrps/bhurwitz/hurwitzlab
+cd rsgrps/bhurwitz
+pwd
+cd rsgrps/bhurwitz/hurwitzlab
+ls hurwitzlab /
+ls abe487 /
+cd rsgrps/bhurwitz/hurwitzlab/abe487
+ls /
+ls /temp
+ls /
+mkdir foo
+ls /
+ls foo
+ls /
+ls foo/
+ls -la foo/
+rmdir foo/
+~etoth
+pwd/
+pwd 
+ls -F
+mkdir foo/
+ls
+rmdir foo/
+ls
+w
+man wc
+cuffdiff.txt
+ls cuffdiff.txt
+ls
+ls hurwitzlab
+ls abe487
+cd abe487
+ls share
+ls
+ls hurwitzlab
+cd hurwitzlab/abe487
+ls
+wc -l
+ls
+ls /
+ls rsgrps
+ls /
+ls rsgrps /
+cd rsgrps
+ls /
+ls rsgrps1
+ls bin/
+ls /
+ls logs /
+cd rsgrps/bhurwitz
+ls home/
+ls /
+ls temp/
+ls temp /
+ls /temp
+ls /rsgrps
+ls bhurwitz
+ls /bhurwitz
+cd /rsgrps/bhurwitz
+ls
+ls /hurwitzlab
+cd /hurwitzlab
+cd hurwitzlab
+ls
+cd abe487
+ls
+man wc
+wc -l cuffdiff.txt
+head cuffdiff.txt
+ls -F
+ls
+lf -F/
+ls -F/
+home
+../
+ls /
+pwd
+ls
+wc -l cuffdiff.txt
+.
+./
+ls ./
+cd /bhurwitz
+pwd
+cd /rsgrps/bhurwitz
+ls
+cd /rsgprs/bhurwitz/share
+ls share
+ls
+cd /hurwitzlab
+cd hurwitzlab
+ls
+ls share
+ls abe487
+cd /etoth
+cd home
+cd etoth
+cd /home
+ls
+cd /etoth
+cd ~etoth
+ls
+ls /
+mkdir work
+ls /
+pwd
+ls
+ls /
+cd /rsgrps/bhurwitz
+ls
+cd hurwitzlab
+ls
+cd abe487
+ls
+.ssh/
+ls
+cd /home
+ls
+cd ~etoth
+ls
+ls /
+ssh-keygen
+cd ~/.ssh
+ls
+ls authorized_keyes
+ls authorized_keys
+authorized_keys
+w
+w | head.n5
+w | head/n5
+w | head -5
+cd ~etoth
+cd ./work
+home
+w | head -5 > head
+ls
+head head
+head tail
+tail head
+w | tail > tail
+cat head tail > all
+ls
+wc -l all
+wc -l tail
+wc -l head
+file head
+cd rsgrps/bhurwitz/hurwitzlab/abe487
+cd /rspgrps/bhurwitz/hurwitzlab/abe487
+cd ~etoth
+ls
+ls /
+cd /rsgrps/bhurwitz/hurwitzlab/abe487
+ls
+cd ~etoth
+ls /temp cuffdiff
+ls
+ls /
+cp /tmp/cuffdiff.txt .
+ftp ftp.imicrobe.us

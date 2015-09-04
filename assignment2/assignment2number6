@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+print "This is a statement.\n";
+print 'This is a single quote statement.';
+print "This is a double-quote statement with a \t tab and a \n line break.\n";
+print 'This is a single-quote statement with a \t tab and a \n line break.';
+print "This is a double-quote statement with equations.  The rain in Spain falls mainly on", 2+2, "plains.\n";
+print 'This is a single-quote statement with equations.  The rain in Spain falls mainly on', 2+2, 'plains.\n';
+#To avoid printing out the equation instead of the outcome of the equation, put the equation outside of the quotes.
+#Double quotes will allow you to use variables and escape codes like /n and /t.  Single quotes won't.

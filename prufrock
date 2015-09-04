@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+#tabs and newline print
+use strict;
+use warnings;
+print "Let us go then, you and I\n when the evening is laid out against the sky\n like a patient \t etherized upon a table\n";

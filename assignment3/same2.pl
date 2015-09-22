@@ -1,11 +1,12 @@
-#!/usr/bin/perl
+!/usr/bin/perl
 use strict;
 use warnings;
 my$x=shift @ARGV;
 my$y=shift @ARGV;
 if (lc($x) eq lc($y)) {
-	print "Same.";
+        print "Same.";
 }
 else {
-	print "Not same." ;
+        print "Not same." ;
 }
+

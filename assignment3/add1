@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-my $x=shift @ARGV;
-my $y=shift @ARGV;
-print "Sum=", $x+$y,"\n";
+my $x = shift @ARGV;
+my $y = shift @ARGV;
+print "Sum=", $x + $y, "\n";

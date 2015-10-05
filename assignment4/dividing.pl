@@ -1,6 +1,8 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
+
 use strict;
 use warnings;
+
 print "FEED ME: ";
 my $x = <STDIN>;
 chomp $x;
@@ -10,12 +12,13 @@ my $y = <STDIN>;
 chomp $y;
 die if ($y eq "");
 if ($x < 0) {
-	die "I hate negatives."
-};
+    die "I hate negatives.";
+}
 if ($y < 0) {
-	die "I hate negatives."
-};
+    die "I hate negatives.";
+}
 if ($y == 0) {
-	die "+++ DIVIDE BY CUCUMBER ERROR REINSTALL UNIVERSE AND REBOOT +++"
-};
+    die "+++ DIVIDE BY CUCUMBER ERROR REINSTALL UNIVERSE AND REBOOT +++";
+}
+
 #fin

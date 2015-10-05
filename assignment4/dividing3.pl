@@ -36,4 +36,4 @@ Let the user sort out STDERR/STDOUT:
 
   $ prog 1>out 2>err
 
-Half off.
+One point off.

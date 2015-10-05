@@ -30,4 +30,4 @@ Instructions:
 
 l. 16: You fail to handle lowercase sequence (e.g., repeat-masked).
 
-Half off.
+One point off.

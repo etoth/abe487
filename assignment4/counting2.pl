@@ -41,4 +41,4 @@ After I removed the "chomp" (l. 12):
  The number of characters is 8039
  The average characters per line is 66.9916666666667
 
-Half off.
+One point off.

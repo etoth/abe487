@@ -11,3 +11,7 @@ push @given, 12;
 print join (',', "Pushed array:", @given), "\n";
 unshift @given, 4;
 print join (',', "Unshifted array:", @given), "\n";
+
+__END__
+
+Does not meet the expected output.  Next time points off.

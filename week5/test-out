@@ -1,0 +1,76 @@
+not ok 1 - 01-mod.pl
+#   Failed test '01-mod.pl'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '2'
+#     expected: '0'
+# Different in line: 1: got (Use of uninitialized value $ARGV[0] in string eq at /Users/kyclark/work/students/etoth/week5/01-mod.pl line 4.), expect (Please provide a list of numbers.)
+# 
+# 2: got Please provide a list of numbers. at /Users/kyclark/work/students/etoth/week5/01-mod.pl line 5.
+not ok 2 - 01-mod.pl 1 2 3 4 5 6 7
+#   Failed test '01-mod.pl 1 2 3 4 5 6 7'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '3'
+#     expected: '0'
+# Different in line: 1: got (2), expect (evens = 2, 4, 6)
+# 
+# 2: got 4
+# 3: got 6
+not ok 3 - 01-mod.pl 1 3 5 7
+#   Failed test '01-mod.pl 1 3 5 7'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '1'
+#     expected: '0'
+# Different in line: got nothing, expected: evens = 
+Skipping 02-mod-sort-sum.pl (does not exist)
+Skipping 02-mod-sort-sum.pl (does not exist)
+not ok 4 - 03-sort.pl
+#   Failed test '03-sort.pl'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '2'
+#     expected: '0'
+# Different in line: 1: got (Use of uninitialized value $ARGV[0] in string eq at /Users/kyclark/work/students/etoth/week5/03-sort.pl line 4.), expect (Please provide a list of numbers.)
+# 
+# 2: got Please provide a list of numbers. at /Users/kyclark/work/students/etoth/week5/03-sort.pl line 5.
+not ok 5 - 03-sort.pl 98 2 36 74 27 33
+#   Failed test '03-sort.pl 98 2 36 74 27 33'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '3'
+#     expected: '0'
+# Different in line: 1: got (Default sort: 2 27 33 36 74 98), expect (default sort = 2, 27, 33, 36, 74, 98)
+# 
+# 2: got (Numerical sort: 2 27 33 36 74 98), expect (numerical sort = 2, 27, 33, 36, 74, 98)
+# 
+# 3: got (Reverse numerical sort: 98 74 36 33 27 2), expect (reverse numerical sort = 98, 74, 36, 33, 27, 2)
+not ok 6 - 04-array-ops.pl
+#   Failed test '04-array-ops.pl'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '6'
+#     expected: '0'
+# Different in line: 1: got (101,2,15,22,95,33,2,27,72,15,52), expect (array = 101, 2, 15, 22, 95, 33, 2, 27, 72, 15, 52)
+# 
+# 2: got (Popped array:,101,2,15,22,95,33,2,27,72,15), expect (popped = 52, array = 101, 2, 15, 22, 95, 33, 2, 27, 72, 15)
+# 
+# 3: got (Shifted array:,2,15,22,95,33,2,27,72,15), expect (shifted = 101, array = 2, 15, 22, 95, 33, 2, 27, 72, 15)
+# 
+# 4: got (Pushed array:,2,15,22,95,33,2,27,72,15,12), expect (after push, array = 2, 15, 22, 95, 33, 2, 27, 72, 15, 12)
+# 
+# 5: got (Unshifted array:,4,2,15,22,95,33,2,27,72,15,12), expect (after unshift, array = 4, 2, 15, 22, 95, 33, 2, 27, 72, 15, 12)
+# 
+# 1: got Useless use of a constant ("\n") in void context at /Users/kyclark/work/students/etoth/week5/04-array-ops.pl line 6.
+Skipping 05-string-sort.pl (does not exist)
+Skipping 05-string-sort.pl (does not exist)
+Skipping 06-string-sort-len.pl (does not exist)
+Skipping 06-string-sort-len.pl (does not exist)
+Skipping 07-gc.pl (does not exist)
+Skipping 07-gc.pl (does not exist)
+Skipping 08-snps.pl (does not exist)
+Skipping 08-snps.pl (does not exist)
+Skipping 08-snps.pl (does not exist)
+Skipping 08-snps.pl (does not exist)
+Skipping 08-snps.pl (does not exist)
+Skipping 09-extra-credit.pl (does not exist)
+Skipping 09-extra-credit.pl (does not exist)
+1..6
+The plan was already output at /usr/local/lib/perl5/5.22.0/Test/Builder.pm line 2510.
+1..6
+# Looks like you failed 6 tests of 6.

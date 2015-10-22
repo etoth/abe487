@@ -6,7 +6,7 @@ use Data::Dumper;
 use feature 'say';
 
 if (@ARGV !=2) {
-    die;
+    die "Please provide two files.\n";
 }
 my %words1;
 my %words2;
@@ -17,7 +17,7 @@ while (my $line = <$file1>) {
     my @words = split /\s+/, $line;
     for my $word (@words) {
         $word =~ s/[^A-Za-z0-9]//g;
-        $words1{$word} ++;
+        $words1{lc $word} ++;
     }
 }
 open my $file2, '<', $ARGV[1];
@@ -26,7 +26,7 @@ while (my $line = <$file2>) {
     my @words = split /\s+/, $line;
     for my $word (@words) {
         $word =~ s/[^A-Za-z0-9]//g;
-        $words2{$word} ++;
+        $words2{lc $word} ++;
     }
 }
 for my $key (sort keys %words1) {
@@ -36,3 +36,7 @@ for my $key (sort keys %words1) {
     }
 }
 say "Found $i words in common."
+
+__END__
+
+You get a different answer with case-insensitive matching.

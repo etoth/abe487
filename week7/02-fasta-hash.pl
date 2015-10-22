@@ -3,10 +3,10 @@ use warnings;
 use strict;
 use autodie;
 use feature 'say';
-if (!@ARGV) {
-	die;
-}
-my $filename = $ARGV[0];
+#if (!@ARGV) {
+#	die;
+#}
+my $filename = shift || 'Perl_V.genesAndSeq.txt';
 my %seq;
 my $id;
 open my $file, '<', $filename;
@@ -24,3 +24,7 @@ while (my $line = <$file>) {
 for my $key (sort {	$seq{$a} <=> $seq{$b} } keys %seq) {
 	say $key, ': ', $seq{$key};
 }
+
+__END__
+
+Instructions said to have a default argument.

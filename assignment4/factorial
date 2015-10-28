@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+my $file = 'numbers.txt';
+open my $file_fh, '<', $file;
+while (my $line = <$file_fh>) {
+	chomp($line);
+	if (substr ($line, 0, 2) < 24) {
+	if sub even {
+            my $line = abs shift;
+            if $line == 0;
+            print "$line";        
+	}  
+	else {
+        $factorial = factorial($line - 1) * $line;
+        print "$factorial";
+	}
+}
+}

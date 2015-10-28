@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+print "The sky above the terminal was the color of television, tuned to a\t dead channel.\n";
+my $book ="neuromancer\n";
+print $book;
+print 'This book was printed in', 1985-1,'.\n'

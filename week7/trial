@@ -1,0 +1,24 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use autodie;
+my $str1;
+my $str2;
+open my $file1, '<', $ARGV[0];
+        while (my $line = <$file1>) {
+                chomp $line;
+                my $str1 = join ("\n", split (' ', $line), "\n" )
+        }
+open my $file2, '<', $ARGV[1];
+        while (my $line = <$file2>) {
+                chomp $line;
+                my $str2 = join ("\n", split (' ', $line), "\n")
+        }
+print join '', In_Common($str1, $str2);
+
+sub In_Common {
+    my ($str1, $str2) = @_;
+    my %u;
+    $u{ $_ } = 1 for split //, $str1;
+    return grep { $u{ $_ } ? ( $u{ $_ }-- , $_ ) : () } split //, $str2;
+}

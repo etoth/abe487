@@ -1,0 +1,71 @@
+ok 1 - 02-fasta-hash.pl
+ok 2 - 02-fasta-hash.pl test.fa
+ok 3 - 03-common-words.pl
+ok 4 - 03-common-words.pl fox-in-socks.txt green-eggs.txt
+ok 5 - 04-kmer-count.pl
+not ok 6 - 04-kmer-count.pl A
+#   Failed test '04-kmer-count.pl A'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '7'
+#     expected: '0'
+# Different in line: 1: got Sequence length          1
+# 2: got Mer size                 3
+# 3: got Number of kmers         -1
+# 4: got Unique Kmers             0
+# 5: got Num. singletons           
+# 6: got Most abundant
+# 1: got (Use of uninitialized value $count1 in printf at /Users/kyclark/work/students/etoth/week7/04-kmer-count.pl line 39.), expect (Cannot get any 3 mers from a sequence of length 1)
+not ok 7 - 04-kmer-count.pl AAA
+#   Failed test '04-kmer-count.pl AAA'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '2'
+#     expected: '0'
+# Different in line: 4: got (Unique Kmers             1), expect (Unique kmers             1)
+# 
+# 6: got Most abundant
+not ok 8 - 04-kmer-count.pl TTTGATACTCCTATTAAGTAA 2
+#   Failed test '04-kmer-count.pl TTTGATACTCCTATTAAGTAA 2'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '6'
+#     expected: '0'
+# Different in line: 4: got (Unique Kmers            12), expect (Unique kmers            12)
+# 
+# 7: got (TA                       4), expect (TA: 4)
+# 
+# 8: got (TT                       3), expect (TT: 3)
+# 
+# 9: got (AA                       2), expect (AA: 2)
+# 
+# 10: got (AT                       2), expect (AT: 2)
+# 
+# 11: got (CT                       2), expect (CT: 2)
+not ok 9 - 04-kmer-count.pl mouse.fa 8
+#   Failed test '04-kmer-count.pl mouse.fa 8'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '11'
+#     expected: '0'
+# Different in line: 4: got (Unique Kmers         27330), expect (Unique kmers         27330)
+# 
+# 7: got (TATTTTTT                14), expect (TATTTTTT: 14)
+# 
+# 8: got (ATCGGAAG                13), expect (ATCGGAAG: 13)
+# 
+# 9: got (ATTTTTTT                13), expect (ATTTTTTT: 13)
+# 
+# 10: got (CGGAAGAG                13), expect (CGGAAGAG: 13)
+# 
+# 11: got (AAAAATAT                12), expect (AAAAATAT: 12)
+# 
+# 12: got (AAAAGAAA                12), expect (AAAAGAAA: 12)
+# 
+# 13: got (GATCGGAA                12), expect (GATCGGAA: 12)
+# 
+# 14: got (GGAAGAGC                12), expect (GGAAGAGC: 12)
+# 
+# 15: got (TCGGAAGA                12), expect (TCGGAAGA: 12)
+# 
+# 16: got (AAAAGCAA                11), expect (AAAAGCAA: 11)
+1..9
+The plan was already output at /usr/local/lib/perl5/5.22.0/Test/Builder.pm line 2510.
+1..9
+# Looks like you failed 4 tests of 9.

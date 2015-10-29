@@ -25,10 +25,12 @@ sub main {
             -verbose => $args{'man'} ? 2 : 1
         });
     }
-    my $program = $args{program};
+    my $program = $args{program} or pod2usage ("No program");
+    my $argument = $args{argument} or pod2usage ("No argument");
     if ($program eq 'rc') {
-        reverse_comp($args{argument});
+        reverse_comp($argument);
     }
+
 }
 
 # --------------------------------------------------
@@ -80,11 +82,11 @@ Usage:
 
 <INPUT>
 
-01-subs.pl GATTA
+01-subs.pl -p rc -a GATTA
 
 <EXPECTED OUTPUT>
 
-Reverse complement: TAATC
+TAATC
 
 =head1 SEE ALSO
 

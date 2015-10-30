@@ -1,0 +1,46 @@
+not ok 1 - 01-palindrome.pl
+#   Failed test '01-palindrome.pl'
+#   at /usr/local/lib/perl5/site_perl/5.20.0/Test/Script/Run.pm line 258.
+#          got: '1'
+#     expected: '0'
+# Different in line: 1: got Yes
+ok 2 - 01-palindrome.pl foo
+not ok 3 - 01-palindrome.pl "Madam in Eden Im Adam"
+#   Failed test '01-palindrome.pl "Madam in Eden Im Adam"'
+#   at /usr/local/lib/perl5/site_perl/5.20.0/Test/Script/Run.pm line 258.
+#          got: '1'
+#     expected: '0'
+# Different in line: 1: got (No), expect (Yes)
+ok 4 - 01-palindrome.pl gatcctag
+not ok 5 - 01-palindrome.pl "A man, a plan, a canal... Panama"
+#   Failed test '01-palindrome.pl "A man, a plan, a canal... Panama"'
+#   at /usr/local/lib/perl5/site_perl/5.20.0/Test/Script/Run.pm line 258.
+#          got: '1'
+#     expected: '0'
+# Different in line: 1: got (No), expect (Yes)
+ok 6 - 02-nobody.pl John
+not ok 7 - 03-fasta.pl
+#   Failed test '03-fasta.pl'
+#   at /usr/local/lib/perl5/site_perl/5.20.0/Test/Script/Run.pm line 258.
+#          got: '1'
+#     expected: '0'
+# Different in line: 1: got (Can't open '<undef>' for reading: 'No such file or directory' at /Users/kyclark/work/students/etoth/week8/03-fasta.pl line 9), expect (Please provide a FASTA file.)
+ok 8 - 03-fasta.pl one.fa
+ok 9 - 03-fasta.pl test.fa
+not ok 10 - 04-restriction.pl
+#   Failed test '04-restriction.pl'
+#   at /usr/local/lib/perl5/site_perl/5.20.0/Test/Script/Run.pm line 258.
+#          got: '1'
+#     expected: '0'
+# Different in line: 1: got (Cannot open infile No such file or directory at /Users/kyclark/work/students/etoth/week8/04-restriction.pl line 8.), expect (Please provide a sequence or file.)
+not ok 11 - 04-restriction.pl seq.txt
+#   Failed test '04-restriction.pl seq.txt'
+#   at /usr/local/lib/perl5/site_perl/5.20.0/Test/Script/Run.pm line 258.
+#          got: '2'
+#     expected: '0'
+# Different in line: 1: got Cannot open infile No such file or directory at /Users/kyclark/work/students/etoth/week8/04-restriction.pl line 8.
+# got nothing, expected: G^AATTCAAGTTCTTGTGCGCACACAAATCCAATAAAAACTATTGTGCACACAGACGCGACTTCGCGGTCTCGCTTGTTCTTGTTGTATTCGTATTTTCATTTCTCGTTCTGTTTCTACTTAACAATGTGGTGATAATATAAAAAATAAAGCAATTCAAAAGTGTATGACTTAATTAATGAGCGATTTTTTTTTTGAAATCA^AATTTTTGGAACATTTTTTTTA^AATTCA^AATTTTGGCGAA^AATTCAATATCGGTTCTACTATCCATAATATAATTCATCAGGAATACATCTTCAAAGGCAAACGGTGACAACAA^AATTCAGGCAATTCAGGCAAATACCGAATGACCAGCTTGGTTATCAATTCTAG^AATTTGTTTTTTGGTTTTTATTTATCATTGTAAATAAGACAAACATTTGTTCCTAGTAAAGAATGTAACACCAGAAGTCACGTAAAATGGTGTCCCCATTGTTTAAACGGTTGTTGGGACCAATGGAGTTCGTGGTAACAGTACATCTTTCCCCTTG^AATTTGCCATTCAA^AATTTGCGGTGGAATACCTAACAAATCCAGTG^AATTTAAGAATTGCGATGGGTAATTGACATG^AATTCCAAGGTCAAATGCTAAGAGATAGTTTAATTTATGTTTGAGACAATCAATTCCCCAATTTTTCTAAGACTTCAATCAATCTCTTAGAATCCGCCTCTGGAGGTGCACTCAGCCGCACGTCGGGCTCACCAAATATGTTGGGGTTGTCGGTGAACTCGAATAGAAATTATTGTCGCCTCCATCTTCATGGCCGTGAAATCGGCTCGCTGACGGGCTTCTCGCGCTGGATTTTTTCACTATTTTTGAATACATCATTAACGCAATATATATATATATATATTTAT
+1..11
+The plan was already output at /usr/local/lib/perl5/site_perl/5.20.0/Test/Builder.pm line 2510.
+1..11
+# Looks like you failed 6 tests of 11.

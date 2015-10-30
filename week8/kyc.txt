@@ -1,0 +1,3 @@
+I made corrections to your palindrome to get it to pass some tests, but 
+you didn't implement the algorithm correctly.  The instructions indicated the 
+correct regex to remove non-word characters ($text =~ s/[^a-zA-Z0-9]//g).

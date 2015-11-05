@@ -14,6 +14,7 @@ use Bio::DB::GenBank;
 my %opts = get_opts();
 my @args = @ARGV;
 my $seq;
+my $gname;
 @ARGV > 0 or pod2usage "Provide arguments\n";
 if ($opts{'help'} || $opts{'man'}) {
     pod2usage({
@@ -21,30 +22,43 @@ if ($opts{'help'} || $opts{'man'}) {
         -verbose => $opts{'man'} ? 2 : 1
     });
 }
-for my $file (@ARGV) {
+my $in = new Bio::SeqIO(-file => "@args", -format => 'genbank');
+my $out = new Bio::SeqIO(-format => 'fasta');
+for my $f (@ARGV) {
     my $seqio = Bio::SeqIO->new(
-        -file => $file,
+        -file => $f,
         -format => "fasta"
     );
     while (my $seq = $seqio->next_seq()) {
-        foreach my $feat ($seq->top_SeqFeatures) {
-            if ($feat->primary_tag eq 'CDS') {
-                # ex - coded_by = U05745.1:1..133
-                my @coded_by = $feat->each_tag_value('coded_by');
-                my ($nun_acc, $loc_str) = split /\:/, $coded_by[0];
-                my $nun_obj = $gb->get_Seq_by_acc($nun_acc);
-                # create bio::location object from string
-                my $loc_object = $loc_factory->from_string($loc_str);
-                #create feature object by using location
-                my $feat_obj = Bio::SeqFeature::Generic->new(-location =>$loc_object);
-                # associate the feature object with nucleotide sequence object
-                $nun_obj->add_SeqFeature($feat_obj);
-                my $cds_obj = $feat_obj->spliced_seq;
-                say "CDS sequence is",$cds_obj->seq,;
+        my @cds;
+        foreach my $feat (grep {$_->primary_tag eq 'CDS'}
+            $seq->top_SeqFeatures){
+                if ($feat->has_tag('gene')){
+                    ($gname) = $feat->each_tag_value('gene');
+                }elsif ($feat->has_tag('product')){
+                    ($gname)=$f->each_tag_value('product');
+                }
+                my ($ref) = $f->has_tag('protein_id') && 
+                $f->each_tag_value('protein_id');
+                my ($gi)  = $f->has_tag('db_xref') && $f->each_tag_value('db_xref');
+
+                my ($translation) = $f->has_tag('translation') &&
+                $f->each_tag_value('translation');
+
+                unless( $gi && $ref && $gname && $translation ) {
+                print STDERR "not fully annotated CDS ($gi,$ref,$gname), 
+                skipping...\n";
+                next;
             }
-        }
+        my $outseq = Bio::PrimarySeq->new
+            (-seq => $translation,
+             -display_id =>
+             sprintf("gi|%s|gb|%s|%s",$gi,$gname,$ref));
+        $out->write_seq($outseq);
     }
 }
+}    
+
 # --------------------------------------------------
 sub get_opts {
     my %opts;

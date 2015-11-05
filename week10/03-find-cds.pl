@@ -23,37 +23,25 @@ if ($opts{'help'} || $opts{'man'}) {
     });
 }
 my $in = new Bio::SeqIO(-file => "@args", -format => 'genbank');
+my $acc;
 for my $f (@ARGV) {
     while (my $seq = $in->next_seq()) {
-        my @cds;
-        foreach my $feat (grep {$_->primary_tag eq 'CDS'}
-            $seq->top_SeqFeatures){
-                if ($feat->has_tag('gene')){
-                    ($gname) = $feat->each_tag_value('gene');
-                }elsif ($feat->has_tag('product')){
-                    ($gname)=$f->each_tag_value('product');
-                }
-                my ($ref) = $f->has_tag('protein_id') && 
-                $f->each_tag_value('protein_id');
-                my ($gi)  = $f->has_tag('db_xref') && $f->each_tag_value('db_xref');
-
-                my ($translation) = $f->has_tag('translation') &&
-                $f->each_tag_value('translation');
-
-                unless( $gi && $ref && $gname && $translation ) {
-                print STDERR "not fully annotated CDS ($gi,$ref,$gname), 
-                skipping...\n";
-                next;
+        my @cds = ();
+        my $acc = $seq->accession();
+        for my $feat ($seq->get_SeqFeatures() ) {
+            if ($feat->primary_tag eq 'CDS') {
+               push @cds, $feat->get_tag_values('translation');  
             }
-        my $outseq = Bio::PrimarySeq->new
-            (-seq => $translation,
-             -display_id =>
-             sprintf("gi|%s|gb|%s|%s",$gi,$gname,$ref));
-       say $outseq;
-    }
+        }
+        my $i = scalar (@cds);
+        my $n = 0;
+        printf "$acc has %s CDS%s\n", $i, $i==1 ? '' : 's';
+        for (@cds){
+            $n++;
+            print "$n : $_\n";
+        }
+    }    
 }
-}    
-
 # --------------------------------------------------
 sub get_opts {
     my %opts;

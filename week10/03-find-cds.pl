@@ -23,13 +23,8 @@ if ($opts{'help'} || $opts{'man'}) {
     });
 }
 my $in = new Bio::SeqIO(-file => "@args", -format => 'genbank');
-my $out = new Bio::SeqIO(-format => 'fasta');
 for my $f (@ARGV) {
-    my $seqio = Bio::SeqIO->new(
-        -file => $f,
-        -format => "fasta"
-    );
-    while (my $seq = $seqio->next_seq()) {
+    while (my $seq = $in->next_seq()) {
         my @cds;
         foreach my $feat (grep {$_->primary_tag eq 'CDS'}
             $seq->top_SeqFeatures){
@@ -54,7 +49,7 @@ for my $f (@ARGV) {
             (-seq => $translation,
              -display_id =>
              sprintf("gi|%s|gb|%s|%s",$gi,$gname,$ref));
-        $out->write_seq($outseq);
+       say $outseq;
     }
 }
 }    

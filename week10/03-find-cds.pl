@@ -6,19 +6,45 @@ use autodie;
 use feature 'say';
 use Getopt::Long;
 use Pod::Usage;
+use Data::Dumper;
+use Bio::DB::GenBank;
+
+
 
 my %opts = get_opts();
 my @args = @ARGV;
-
+my $seq;
+@ARGV > 0 or pod2usage "Provide arguments\n";
 if ($opts{'help'} || $opts{'man'}) {
     pod2usage({
         -exitval => 0,
         -verbose => $opts{'man'} ? 2 : 1
     });
 }
-
-say "OK";
-
+for my $file (@ARGV) {
+    my $seqio = Bio::SeqIO->new(
+        -file => $file,
+        -format => "fasta"
+    );
+    while (my $seq = $seqio->next_seq()) {
+        foreach my $feat ($seq->top_SeqFeatures) {
+            if ($feat->primary_tag eq 'CDS') {
+                # ex - coded_by = U05745.1:1..133
+                my @coded_by = $feat->each_tag_value('coded_by');
+                my ($nun_acc, $loc_str) = split /\:/, $coded_by[0];
+                my $nun_obj = $gb->get_Seq_by_acc($nun_acc);
+                # create bio::location object from string
+                my $loc_object = $loc_factory->from_string($loc_str);
+                #create feature object by using location
+                my $feat_obj = Bio::SeqFeature::Generic->new(-location =>$loc_object);
+                # associate the feature object with nucleotide sequence object
+                $nun_obj->add_SeqFeature($feat_obj);
+                my $cds_obj = $feat_obj->spliced_seq;
+                say "CDS sequence is",$cds_obj->seq,;
+            }
+        }
+    }
+}
 # --------------------------------------------------
 sub get_opts {
     my %opts;

@@ -1,0 +1,81 @@
+1..25
+ok 1 - /Users/kyclark/work/students/etoth/week10/01-fasta-splitter.pl
+ok 2 - /Users/kyclark/work/students/etoth/week10/01-fasta-splitter.pl -n 10 -o /var/folders/hr/9s3kbq2x46nfp6kbdn99s63r0000gp/T/F2f7CH22nO/split /Users/kyclark/work/abe487/lab/tester/data/week10/test.fa /Users/kyclark/work/abe487/lab/tester/data/week10/test2.fa
+not ok 3 - /var/folders/hr/9s3kbq2x46nfp6kbdn99s63r0000gp/T/F2f7CH22nO/split was created
+#   Failed test '/var/folders/hr/9s3kbq2x46nfp6kbdn99s63r0000gp/T/F2f7CH22nO/split was created'
+#   at ./test-week10.pl line 61.
+not ok 4 - test.fa.1 exists
+#   Failed test 'test.fa.1 exists'
+#   at ./test-week10.pl line 73.
+not ok 5 - test.fa.1 size = 2384
+#   Failed test 'test.fa.1 size = 2384'
+#   at ./test-week10.pl line 76.
+#          got: undef
+#     expected: '2384'
+not ok 6 - test.fa.2 exists
+#   Failed test 'test.fa.2 exists'
+#   at ./test-week10.pl line 73.
+not ok 7 - test.fa.2 size = 2085
+#   Failed test 'test.fa.2 size = 2085'
+#   at ./test-week10.pl line 76.
+#          got: undef
+#     expected: '2085'
+not ok 8 - test.fa.3 exists
+#   Failed test 'test.fa.3 exists'
+#   at ./test-week10.pl line 73.
+not ok 9 - test.fa.3 size = 813
+#   Failed test 'test.fa.3 size = 813'
+#   at ./test-week10.pl line 76.
+#          got: undef
+#     expected: '813'
+not ok 10 - test2.fa.1 exists
+#   Failed test 'test2.fa.1 exists'
+#   at ./test-week10.pl line 73.
+not ok 11 - test2.fa.1 size = 2992
+#   Failed test 'test2.fa.1 size = 2992'
+#   at ./test-week10.pl line 76.
+#          got: undef
+#     expected: '2992'
+not ok 12 - test2.fa.2 exists
+#   Failed test 'test2.fa.2 exists'
+#   at ./test-week10.pl line 73.
+not ok 13 - test2.fa.2 size = 41
+#   Failed test 'test2.fa.2 size = 41'
+#   at ./test-week10.pl line 76.
+#          got: undef
+#     expected: '41'
+ok 14 - /Users/kyclark/work/students/etoth/week10/02-fasta-search.pl
+ok 15 - /Users/kyclark/work/students/etoth/week10/02-fasta-search.pl /Users/kyclark/work/abe487/lab/tester/data/week10/uniprot.fa Z_
+not ok 16 - outfile (Z_.fa) exists)
+#   Failed test 'outfile (Z_.fa) exists)'
+#   at ./test-week10.pl line 100.
+not ok 17 - outfile is correct size
+#   Failed test 'outfile is correct size'
+#   at ./test-week10.pl line 103.
+#          got: undef
+#     expected: '4761'
+ok 18 - /Users/kyclark/work/students/etoth/week10/03-find-cds.pl
+not ok 19 - /Users/kyclark/work/students/etoth/week10/03-find-cds.pl /Users/kyclark/work/abe487/lab/tester/data/week10/ncbi-sample-rec.gb /Users/kyclark/work/abe487/lab/tester/data/week10/sequence.gb
+#   Failed test '/Users/kyclark/work/students/etoth/week10/03-find-cds.pl /Users/kyclark/work/abe487/lab/tester/data/week10/ncbi-sample-rec.gb /Users/kyclark/work/abe487/lab/tester/data/week10/sequence.gb'
+#   at /usr/local/lib/perl5/site_perl/5.22.0/Test/Script/Run.pm line 258.
+#          got: '17'
+#     expected: '0'
+# Different in line: 1: got 
+# 2: got ------------- EXCEPTION -------------
+# 3: got MSG: Could not read file '/Users/kyclark/work/abe487/lab/tester/data/week10/ncbi-sample-rec.gb /Users/kyclark/work/abe487/lab/tester/data/week10/sequence.gb': No such file or directory
+# 4: got STACK Bio::Root::IO::_initialize_io /usr/local/lib/perl5/site_perl/5.22.0/Bio/Root/IO.pm:270
+# 5: got STACK Bio::SeqIO::_initialize /usr/local/lib/perl5/site_perl/5.22.0/Bio/SeqIO.pm:499
+# 6: got STACK Bio::SeqIO::genbank::_initialize /usr/local/lib/perl5/site_perl/5.22.0/Bio/SeqIO/genbank.pm:237
+# 7: got STACK Bio::SeqIO::new /usr/local/lib/perl5/site_perl/5.22.0/Bio/SeqIO.pm:375
+# 8: got STACK Bio::SeqIO::new /usr/local/lib/perl5/site_perl/5.22.0/Bio/SeqIO.pm:421
+# 9: got STACK toplevel /Users/kyclark/work/students/etoth/week10/03-find-cds.pl:25
+# 10: got -------------------------------------
+# 11: got 
+# got nothing, expected: U49845 has 3 CDS
+# got nothing, expected: 1: SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM
+# got nothing, expected: 2: MTQLQISLLLTATISLLHLVVATPYEAYPIGKQYPPVARVNESFTFQISNDTYKSSVDKTAQITYNCFDLPSWLSFDSSSRTFSGEPSSDLLSDANTTLYFNVILEGTDSADSTSLNNTYQFVVTNRPSISLSSDFNLLALLKNYGYTNGKNALKLDPNEVFNVTFDRSMFTNEESIVSYYGRSQLYNAPLPNWLFFDSGELKFTGTAPVINSAIAPETSYSFVIIATDIEGFSAVEVEFELVIGAHQLTTSIQNSLIINVTDTGNVSYDLPLNYVYLDDDPISSDKLGSINLLDAPDWVALDNATISGSVPDELLGKNSNPANFSVSIYDTYGDVIYFNFEVVSTTDLFAISSLPNINATRGEWFSYYFLPSQFTDYVNTNVSLEFTNSSQDHDWVKFQSSNLTLAGEVPKNFDKLSLGLKANQGSQSQELYFNIIGMDSKITHSNHSANATSTRSSHHSTSTSSYTSSTYTAKISSTSAAATSSAPAALPAANKTSSHNKKAVAIACGVAIPLGVILVALICFLIFWRRRRENPDDENLPHAISGPDLNNPANKPNQENATPLNNPFDDDASSYDDTSIARRLAALNTLKLDNHSATESDISSVDEKRDSLSGMNTYNDQFQSQSKEELLAKPPVQPPESPFFDPQNRSSSVYMDSEPAVNKSWRYTGNLSPVSDIVRDSYGSQKTVDTEKLFDLEAPEKEKRTSRDVTMSSLDPWNSNISPSPVRKSVTPSPYNVTKHRNRHLQNIQDSQSGKNGITPTTMSTSSSDDFVPVKDGENFCWVHSMEPDRRPSKKRLVDFSNKSNVNVGQVKDIHGRIPEML
+# got nothing, expected: 3: MNRWVEKWLRVYLKCYINLILFYRNVYPPQSFDYTTYQSFNLPQFVPINRHPALIDYIEELILDVLSKLTHVYRFSICIINKKNDLCIEKYVLDFSELQHVDKDDQIITETEVFDEFRSSLNSLIMHLEKLPKVNDDTITFEAVINAIELELGHKLDRNRRVDSLEEKAEIERDSNWVKCQEDENLPDNNGFQPPKIKLTSLVGSDVGPLIIHQFSEKLISGDDKILNGVYSQYEEGESIFGSLF
+# got nothing, expected: NM_001298872 has 1 CDS
+# got nothing, expected: 1: MDNFGLGGSDLSKGQIFQVLVRLSVASLITYYSVKWMMNQMDPTSKNKKKAKVLAEEQLKRLAEQEGFKLRGQEFSDYELMIASHLVVPADITVSWADIAGLDSVIQELRESVVLPIQHKDLFKHSKLWQAPKGVLLHGPPGCGKTLIAKATAKEAGMRFINLDVAILTDKWYGESQKLTSAVFSLASRIEPCIIFIDEIDSFLRSRNMNDHEATAMMKTQFMMLWDGLSTNANSTVIVMGATNRPQDLDKAIVRRMPAQFHIGLPSETQRKDILKLILQSEEVSQDVDLNRLSKLTNGFSGSDLREMCRNASVYRMRQLITSRDPSATALDRNNVRITMDDLLGSHLKIKESKMHTSSLFLENRIELD
+# Looks like you planned 25 tests but ran 19.
+# Looks like you failed 14 tests of 19 run.

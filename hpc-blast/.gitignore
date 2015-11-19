@@ -1,0 +1,7 @@
+*.fasta
+*.fa
+*.fa.*
+blastdb
+data
+blast-results
+std-*

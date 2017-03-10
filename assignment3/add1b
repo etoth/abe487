@@ -1,21 +1,28 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-my $x=shift @ARGV;
-my $y=shift @ARGV;
-if(defined($x)){
-print "Defined.\n";}
-if(defined($y)){
-print "Defined.\n";}
-else{
-print "FEED ME, SEYMOUR.\n";}
-if($x>=0){
-print "All checks out.\n";}
-else{
-die "Don't be a Negatron.\n";}
-if($y>=0){
-print "All checks out.\n";}
-else{
-die "Don't be a Negatron.\n";}
+my $x = shift @ARGV;
+my $y = shift @ARGV;
+if ( defined($x) ) {
+    print "Defined.\n";
+}
+if ( defined($y) ) {
+    print "Defined.\n";
+}
+else {
+    print "FEED ME, SEYMOUR.\n";
+}
+if ( $x >= 0 ) {
+    print "All checks out.\n";
+}
+else {
+    die "Don't be a Negatron.\n";
+}
+if ( $y >= 0 ) {
+    print "All checks out.\n";
+}
+else {
+    die "Don't be a Negatron.\n";
+}
 
-print "Sum=", $x+$y,"\n";
+print "Sum=", $x + $y, "\n";

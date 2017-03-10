@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-my$x=shift @ARGV;
-my$y=shift @ARGV;
-if ("$x" gt "$y") {
-	print "$y $x";
+my $x = shift @ARGV;
+my $y = shift @ARGV;
+if ( "$x" gt "$y" ) {
+    print "$y $x";
 }
 else {
-	print "$x $y";
+    print "$x $y";
 }

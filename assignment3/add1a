@@ -1,15 +1,19 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-my $x=shift @ARGV;
-my $y=shift @ARGV;
-if(defined($x)){
-print "Defined.\n";}
-else{
-die "FEED ME, SEYMOUR.\n";}
-if(defined($y)){
-print "Defined.\n";}
-else{
-die "FEED ME, SEYMOUR.\n";}
+my $x = shift @ARGV;
+my $y = shift @ARGV;
+if ( defined($x) ) {
+    print "Defined.\n";
+}
+else {
+    die "FEED ME, SEYMOUR.\n";
+}
+if ( defined($y) ) {
+    print "Defined.\n";
+}
+else {
+    die "FEED ME, SEYMOUR.\n";
+}
 
-print "Sum=", $x+$y,"\n";
+print "Sum=", $x + $y, "\n";
